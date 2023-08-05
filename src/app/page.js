@@ -1,4 +1,4 @@
-import QuestoesAleatorias from "@/components/QuestoesAleatorias";
+import QuestoesAleatorias from "@/components/QuestoesAleatorias/QuestoesAleatorias";
 
 export default function Home() {
   return (
