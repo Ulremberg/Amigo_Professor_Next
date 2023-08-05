@@ -14,7 +14,7 @@ const SkeletonLoader = () => (
 
 const QuestoesAleatorias = () => {
   const [questoes, setQuestoes] = useState([]);
-  const [respostas, setRespostas] = useState([]);
+  const [, setRespostas] = useState([]);
   const [pontuacao, setPontuacao] = useState(0);
   const [loading, setLoading] = useState(true);
   let numeroQuestao = 1;
@@ -71,17 +71,6 @@ const QuestoesAleatorias = () => {
     );
     setLoading(false);
   };
-
-  // const embaralharQuestoes = () => {
-  //   const shuffledQuestoes = questoes.map((questaoInfo) => ({
-  //     ...questaoInfo,
-  //     acertou: undefined,
-  //     respostasSelecionadas: null,
-  //   }));
-  //   shuffledQuestoes.sort(() => Math.random() - 0.5);
-  //   setQuestoes(shuffledQuestoes);
-  //   setPontuacao(null);
-  // };
 
   const verificarRespostas = () => {
     let pontuacao = 0;
