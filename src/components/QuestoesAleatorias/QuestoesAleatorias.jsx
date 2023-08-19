@@ -1,8 +1,11 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import { useRouter } from "next/router";
 import initSqlJs from "sql.js";
 import "./QuestoesAleatorias.css";
 import Question from "../Question/Question";
+import {  signOut } from '../../firebase'; 
+
 
 const SkeletonLoader = () => (
   <div className="skeleton-loader">
@@ -18,6 +21,7 @@ const QuestoesAleatorias = () => {
   const [pontuacao, setPontuacao] = useState(0);
   const [loading, setLoading] = useState(true);
   let numeroQuestao = 1;
+  const router = useRouter();
 
   useEffect(() => {
     carregarQuestoes();
@@ -88,9 +92,23 @@ const QuestoesAleatorias = () => {
     setQuestoes(newQuestoes);
   };
 
+  const handleLogout = async () => {
+    try {
+      await signOut();
+     
+      router.push('/login');
+    } catch (error) {
+      console.error('Error logging out:', error.message);
+    }
+  };
+
   return (
     <>
       <h1>O Amigo do professor:</h1>
+      <div className='flex '> 
+      <button onClick={handleLogout} className="btn btn-danger">Sair</button>
+      </div>
+      
       <div id="questoes">
         {loading ? (
           <SkeletonLoader />

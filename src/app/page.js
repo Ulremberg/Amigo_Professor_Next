@@ -1,9 +1,9 @@
-import QuestoesAleatorias from "@/components/QuestoesAleatorias/QuestoesAleatorias";
+// import QuestoesAleatorias from "@/components/QuestoesAleatorias/QuestoesAleatorias";
 
-export default function Home() {
-  return (
-    <>
-      <QuestoesAleatorias />
-    </>
-  );
-}
+// export default function Home() {
+//   return (
+//     <>
+//       <QuestoesAleatorias />
+//     </>
+//   );
+// }
